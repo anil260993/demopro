@@ -1,0 +1,9 @@
+package com.bank.properties;
+
+public class Constant_info {
+	
+	
+	public static String Browesr="chrome";
+	public static String bmlg="/html/body/div[3]/div/div[2]/div/div[1]/div[2]/button";//bank manage login button
+
+}

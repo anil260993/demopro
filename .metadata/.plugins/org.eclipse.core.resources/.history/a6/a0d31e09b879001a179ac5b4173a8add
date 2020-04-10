@@ -1,0 +1,28 @@
+package pack;
+
+import java.util.List;
+import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Test {
+
+	public static void main(String[] args) {
+		int x=10,y=20,z;
+		x=x+y;
+		y=x-y;
+		x=x-y;
+		
+		System.out.println("x::"+x+"   y::"+y);
+		
+		
+		
+	
+	}
+}
+
+

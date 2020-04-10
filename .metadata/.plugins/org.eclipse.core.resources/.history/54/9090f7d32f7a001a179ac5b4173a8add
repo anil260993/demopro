@@ -1,0 +1,48 @@
+package com.bank.base;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.testng.annotations.DataProvider;
+import com.bank.base.*;
+
+import com.bank.properties.Constant_info;
+
+public class Utility {
+	public static  ExcelReader excel;
+	static int rows;
+	static int cols;
+	public static void main(String[] args) throws IOException {
+		getData("/home/vassar/Desktop/Testingproject/Datadrivenframework_updatedcode/src/com/bank/excels/Addcustomer.xlsx");
+	
+	//public StringsetCellData(String sheetName,String colName,int rowNum, String data,String url){
+	/*public static void datawrite() {
+		//ExcelReader excel =new ExcelReader(onstant_info.Add_customer_excel_name);
+	excel.setCellData("Sheet1","4",rows+1,"Testpass","http://www.way2automation.com/angularjs-protractor/banking/#/manager/addCust");
+	}*/
+}
+	@DataProvider
+	public static void getData(String Excel) throws IOException {
+		
+		excel=new  ExcelReader(Excel);
+		 rows=excel.getRowCount("Sheet1");
+		 System.out.println("rows:"+rows);
+		 cols=excel.getColumnCount("Sheet1");
+		 System.out.println("cols:"+cols);
+	Object [][] data=new Object[rows+1][cols];
+	for(int rowNum=2;rowNum<=rows;rowNum++) {
+		for(int colNum=0;colNum<=cols;colNum++) {
+			System.out.println("colNum::"+colNum+"   rowNum::"+rowNum);
+			data[rowNum-2][colNum]=excel.getCellData("Sheet1",rowNum,colNum);
+			
+		}
+	}
+	System.out.println( "data"+data);
+	
+	}
+}

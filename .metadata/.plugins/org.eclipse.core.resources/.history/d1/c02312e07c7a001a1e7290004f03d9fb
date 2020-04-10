@@ -1,0 +1,43 @@
+package pack;
+
+import java.util.List;
+import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Test {
+
+	
+		public static void main(String[] args) {
+			int y,z=0;
+			Scanner sc=new Scanner(System.in);
+			System.out.println("enetre no::");
+			int num=sc.nextInt();
+			if(num>0) {
+		while(num>0) {
+			y=num%10;
+			z=z+y;
+			num=num/10;
+		}
+		System.out.println("sum of number::"+z);
+		
+			}
+		else {
+			System.out.println("enter valid number");
+		}
+			}
+				
+					
+	      }
+
+	
+	
+
+
+
+

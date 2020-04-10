@@ -1,0 +1,8 @@
+package com.bank.testcases;
+import com.bank.base.*;
+
+
+public class Bankmanger extends Baseclass{
+	
+
+}

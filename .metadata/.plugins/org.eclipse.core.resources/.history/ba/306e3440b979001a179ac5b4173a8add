@@ -1,0 +1,41 @@
+package pack;
+
+import java.util.List;
+import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Test {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter no::");
+		int x=sc.nextInt();
+		int y=x;int z,a=0;
+		while(y!=0) {
+			z=y%10;
+			y=y/10;
+			
+			a=a*10+z;
+		}
+		if(x==a) {
+			
+			System.out.println("enter no: is palindrom");
+		}
+		else {
+			System.out.println("enter no. is not palindrom");
+		}
+		System.out.println("x::"+x+"  a::"+a);
+	}
+}
+
+
+int r = inputValue % 10;
+inputValue = inputValue / 10;
+rev = rev * 10 + r;
+i = 0;

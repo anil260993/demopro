@@ -1,0 +1,42 @@
+package com.bank.base;
+
+import java.io.FileInputStream;
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+
+public class Baseclass {
+	public static Properties config=new Properties();
+	public static Properties OR=new Properties();
+	public static FileInputStream fis;
+	public static FileInputStream fis2;
+	public static WebDriver driver;
+	@Test
+	public void baseTest() {
+		if(driver==null) {
+			fis=new FileInputStream("/home/vassar/Desktop/Testingproject/DataDrivenFramework/src/test/resources/properties/Config.properties");
+		config.load(fis);
+		fis2=new FileInputStream("/home/vassar/Desktop/Testingproject/DataDrivenFramework/src/test/resources/properties/OR.properties");
+		OR.load(fis2);
+		
+		if(config.getProperty("browser").equals("chrome")) {
+			System.out.println("before ");
+			System.setProperty("webdriver.chrome.driver","/home/vassar/Documents/chromedriver");
+	       driver=new ChromeDriver();
+	       System.out.println("after");
+		}
+		else if(config.getProperty("browser").equals("firefox")) {
+			System.setProperty("webdriver.chrome.driver","/home/vassar/Documents/geckodriver");
+			driver=new FirefoxDriver();
+			
+		}
+		
+		
+	}
+	
+	
+	
+}

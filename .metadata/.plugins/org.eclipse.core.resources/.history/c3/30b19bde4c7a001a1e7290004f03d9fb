@@ -1,0 +1,17 @@
+package com.bank.utility;
+import java.io.File;
+
+import com.bank.base.*;
+
+public class Screenshort extends Baseclass{
+	
+	public void screenshort() {
+		File src= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		try {
+		 // now copy the  screenshot to desired location using copyFile //method
+		FileUtils.copyFile(src, new File("C:/selenium/error.png"));
+		}
+	}
+	
+
+}

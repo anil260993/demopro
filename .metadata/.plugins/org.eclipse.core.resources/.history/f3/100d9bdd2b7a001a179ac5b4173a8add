@@ -1,0 +1,33 @@
+package com.bank.testcases;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+import com.bank.base.Baseclass;
+import com.bank.properties.*;
+
+public class AddCustomer extends Baseclass{
+	@Test(dataProvider="getData")
+	public void Addcustomer(String fn,String ln,String pc) throws InterruptedException {
+		 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		 
+		driver.findElement(By.xpath(Constant_info.addcustomer)).click();
+		System.out.println("clicking add customer");
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(Constant_info.fn)).sendKeys(fn);
+		System.out.println("add first name customer"+fn);
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(Constant_info.ln)).sendKeys(ln);
+		System.out.println("add lastname name customer"+ln);
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(Constant_info.pc)).sendKeys(pc);
+		System.out.println("add pincode customer"+pc);
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/div/div/form/button")).click();
+		
+	}
+	
+
+}

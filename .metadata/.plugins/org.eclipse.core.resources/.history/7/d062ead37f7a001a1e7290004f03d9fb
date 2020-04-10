@@ -1,0 +1,37 @@
+package pack;
+
+import java.util.List;
+import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Test {
+
+	
+		public static void main(String[] args) {
+			Scanner sc=new Scanner(System.in);
+			System.out.println("enter no::");
+			int num=sc.nextInt();
+			while(num>0){
+				for(int j=1;j<=num;j++) {
+					System.out.print(num+"  ");
+				}
+				System.out.println();
+				num--;
+			}
+			
+		}		
+					
+	      }
+
+	
+	
+
+
+
+

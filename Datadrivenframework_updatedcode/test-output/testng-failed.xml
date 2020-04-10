@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="com.bank.testcases.Bankmanger">
+        <methods>
+          <include name="baseTest"/>
+          <include name="tearDown"/>
+          <include name="LoginAsBankManager"/>
+        </methods>
+      </class> <!-- com.bank.testcases.Bankmanger -->
+      <class name="com.bank.testcases.OpenAccountTest">
+        <methods>
+          <include name="baseTest"/>
+          <include name="tearDown"/>
+          <include name="OpenAccountTest"/>
+        </methods>
+      </class> <!-- com.bank.testcases.OpenAccountTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

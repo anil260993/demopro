@@ -1,0 +1,33 @@
+package com.bank.base;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.testng.annotations.DataProvider;
+
+import com.bank.properties.Constant_info;
+
+public class Utility {
+	public static  ExcelReader excel;
+	@DataProvider
+	public Object [][] getData(String Excel) throws IOException {
+		
+		excel=new  ExcelReader(Constant_info.Add_customer_excel_name);
+		int rows=excel.getRowCount("Sheet1");
+		int cols=excel.getColumnCount("Sheet1");
+	Object [][] data=new Object[rows-1][cols];
+	for(int rowNum=2;rowNum<=rows;rowNum++) {
+		for(int colNum=0;colNum<=cols;colNum++) {
+			 data[rowNum-2][colNum]=excel.getCellData("Sheet1", colNum, rowNum);
+			
+		}
+	}
+	return data;
+	}
+}
+	

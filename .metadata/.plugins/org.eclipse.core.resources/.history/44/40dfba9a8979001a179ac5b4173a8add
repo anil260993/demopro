@@ -1,0 +1,44 @@
+package com.bank.base;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+
+public class Baseclass {
+	public static Properties config=new Properties();
+	public static Properties OR=new Properties();
+	public static FileInputStream fis;
+	public static FileInputStream fis2;
+	public static WebDriver driver;
+	@Test
+	public void baseTest() throws IOException {
+		if(driver==null) {
+			fis=new FileInputStream("/home/vassar/Desktop/Testingproject/Datadrivenframework_updatedcode/src/com/bank/properties/config.properties");
+		config.load(fis);
+		fis2=new FileInputStream("/home/vassar/Desktop/Testingproject/Datadrivenframework_updatedcode/src/com/bank/properties/objrep.properties");
+		OR.load(fis2);
+		
+		if(config.getProperty("browser").equals("chrome")) {
+			System.out.println("before ");
+			System.setProperty("webdriver.chrome.driver","/home/vassar/Documents/chromedriver");
+	       driver=new ChromeDriver();
+	       System.out.println("after");
+		}
+		else if(config.getProperty("browser").equals("firefox")) {
+			System.setProperty("webdriver.chrome.driver","/home/vassar/Documents/geckodriver");
+			driver=new FirefoxDriver();
+			
+		}
+		
+		
+	}
+	
+	}
+	
+}

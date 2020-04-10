@@ -1,0 +1,44 @@
+package pack;
+
+import java.util.List;
+import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Test {
+
+	public static void main(String[] args) throws InterruptedException {
+		/*System.setProperty("webdriver.chrome.driver","/home/vassar/Documents/chromedriver");
+	 WebDriver      driver=new ChromeDriver();
+	 Thread.sleep(5000);
+	 driver.manage().window().maximize();
+	 driver.get("https://www.google.com/");
+	 List<WebElement >l=driver.findElements(By.tagName("a"));
+	 System.out.println("links::"+l.size());
+	 for(WebElement a:l) {
+		 System.out.println(a.getAttribute("href"));
+		 
+*/		
+		System.out.println("enter 1st no::");
+		Scanner sc=new Scanner(System.in);
+		int x=sc.nextInt();
+		System.out.println("enter 2st no::");
+		if(x%4==0 || x%400==0 && x%100!=0) {
+			System.out.println("enter year is leap year");
+			
+		}
+		
+		
+	 }
+	 
+	 
+	}
+
+
+
+

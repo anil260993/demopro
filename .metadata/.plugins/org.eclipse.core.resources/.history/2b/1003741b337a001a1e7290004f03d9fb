@@ -1,0 +1,37 @@
+package com.bank.base;
+
+import org.testng.annotations.DataProvider;
+
+public class Utility {
+	public static  ExcelReader excel;
+	static int rows;
+	static int cols;
+	public static void main(String[] args)  {
+		getData("/home/vassar/Desktop/Testingproject/Datadrivenframework_updatedcode/src/com/bank/excels/Addcustomer.xlsx");
+	
+	//public StringsetCellData(String sheetName,String colName,int rowNum, String data,String url){
+	/*public static void datawrite() {
+		//ExcelReader excel =new ExcelReader(onstant_info.Add_customer_excel_name);
+	excel.setCellData("Sheet1","4",rows+1,"Testpass","http://www.way2automation.com/angularjs-protractor/banking/#/manager/addCust");
+	}*/
+}
+	@DataProvider
+	public static void getData(String Excel) {
+		
+		excel=new  ExcelReader(Excel);
+		 
+		 System.out.println("rows:"+rows);
+		
+		 System.out.println("cols:"+cols);
+	Object [][] data=new Object[rows+1][cols];
+	for(int rowNum=2;rowNum<=rows;rowNum++) {
+		for(int colNum=0;colNum<cols;colNum++) {
+			
+			data[rowNum-2][colNum]=excel.getCellData("Sheet1",colNum,rowNum);
+			
+		}
+	}
+	System.out.println( "data"+data);
+	
+	}
+}

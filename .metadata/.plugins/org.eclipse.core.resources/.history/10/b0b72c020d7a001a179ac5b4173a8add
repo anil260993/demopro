@@ -1,0 +1,23 @@
+package pack;
+
+import java.util.List;
+import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Test {
+
+	public static void main(String[] args) {
+		int a[]= {100,14,46,47,94,52,86,36};
+		for(int i=0;i<a.length;i++) {
+			System.out.println(a[i]+"  ");
+		}
+			}
+
+}
+
